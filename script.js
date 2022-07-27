@@ -16,14 +16,14 @@ document.getElementById("change_user_button").addEventListener("click", function
   alert("Submission Attempted");
   //TIP: THE ABOVE LINE DISPLAYS AN ALERT ON THE WEBPAGE WHEN YOU HIT THE ENTER KEY OR CLICK SUBMIT FOR User ID
   //Feel free to add to other methods if you think it's helpful
-  if (isLoggedIn){
-    braze.changeUser(userIdentifier);
-}
+
 
   userId = document.getElementById("change_user_text").value;
   //TIP: THE ABOVE LINE IS ASSIGNING THE VALUE IN THE USER ID TEXT BOX TO THE LOCAL VARIABLE userId
   //This is done for every input field
   // TODO ADD CODE HERE.  Pass the userID variable into the change user method
+ 
+    braze.changeUser(userId);
 
 });
 
