@@ -7,6 +7,30 @@
   <meta name="description" content="練習用サイト">
   <link rel="stylesheet" href="css/common.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  
+  
+// initialize the SDK
+  braze.initialize('3a2b6e6a-ed2c-4df7-8303-277e3d9afd75', { 
+	baseUrl: 'sondheim.braze.com',
+	enableLogging: boolean 
+  })
+  
+// optionally show all in-app messages without custom handling
+braze.automaticallyShowInAppMessages();
+
+// optionally set the current user's External ID
+if (isLoggedIn){
+    braze.changeUser(userIdentifier);
+}
+
+// if you use Content Cards
+braze.subscribeToContentCardsUpdates(function(cards){
+    // cards have been updated
+});
+
+// Be sure to call `openSession` after `automaticallyShowInAppMessages`
+braze.openSession();
+  
 </head>
 
 <body>
