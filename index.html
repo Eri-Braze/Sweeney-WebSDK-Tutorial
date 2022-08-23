@@ -104,6 +104,9 @@
   braze.subscribeToContentCardsUpdates(function(cards){
     // cards have been updated
   });          
+  
+  // Be sure to call `openSession` after `automaticallyShowInAppMessages`
+ braze.openSession();
                         
    }(window,document,'script');
     
