@@ -39,7 +39,7 @@ document.getElementById("fn_button").addEventListener("click", function(){
   firstName = document.getElementById("fn_text").value;
 
   // TODO ADD CODE HERE. Pass the firstName variable into the first name set method
-
+braze.getUser().setFirstName(firstName);
 });
 
 var last = document.getElementById("ln_text");
@@ -69,7 +69,7 @@ document.getElementById("email_button").addEventListener("click", function(){
   email = document.getElementById("email_text").value;
 
   // TODO ADD CODE HERE. Pass the email variable into the email set method
-
+braze.getUser().setEmail(email)
 });
 
 //Gender
@@ -155,7 +155,7 @@ document.getElementById("event_button").addEventListener("click", function(){
   {
 
     // TODO ADD CODE HERE
-
+   braze.logCustomEvent(eventName);
   }
   else
   {
