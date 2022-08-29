@@ -107,9 +107,12 @@ braze.subscribeToInAppMessage(function(inAppMessage) {
       for (const key in extras) {
         console.log("key: " + key + ", value: " + extras[key]);
       }
+	    if ( location.pathname === inAppMessage.extras.page ) {
+      			braze.showInAppMessage(inAppMessage);  
+    		}
     }
-  }
-  braze.showInAppMessage(inAppMessage);
+  } else {
+  // do nothing
 });
 
 			
