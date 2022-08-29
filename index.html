@@ -100,16 +100,18 @@
   // optionally show all in-app messages without custom handling
   // braze.automaticallyShowInAppMessages(); --- もとの記述
   
-  braze.subscribeToInAppMessage(function(inAppMessage) {
-  // Display the in-app message. You could defer display here by pushing this message to code within your own application.
-  // If you don't want to use Braze's built-in display capabilities, you could alternatively pass the in-app message to your own display code here.
-  
-  if ( location.pathname === inAppMessage.extras.page ) {
-      braze.showInAppMessage(inAppMessage);
-  } else {
-      // do nothing
+braze.subscribeToInAppMessage(function(inAppMessage) {
+  if (inAppMessage instanceof braze.InAppMessage) {
+    const extras = inAppMessage.extras;
+    if (extras) {
+      for (const key in extras) {
+        console.log("key: " + key + ", value: " + extras[key]);
+      }
+    }
   }
- });
+  braze.showInAppMessage(inAppMessage);
+});
+
 			
  
 
