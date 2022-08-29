@@ -106,14 +106,15 @@ braze.subscribeToInAppMessage(function(inAppMessage) {
     if (extras) {
       for (const key in extras) {
         console.log("key: " + key + ", value: " + extras[key]);
-      }
+  
 	    if ( location.pathname === inAppMessage.extras.page ) {
       			braze.showInAppMessage(inAppMessage);  
-    		}
-    }
+    	}else {
+    	 // do nothing
+    	}
   } else {
   // do nothing
-});
+}}}});
 
 			
  
