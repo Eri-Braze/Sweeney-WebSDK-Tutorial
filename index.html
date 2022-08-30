@@ -98,26 +98,11 @@
   })
   
   // optionally show all in-app messages without custom handling
-  // braze.automaticallyShowInAppMessages(); --- もとの記述
+  braze.automaticallyShowInAppMessages(); --- もとの記述
   
-braze.subscribeToInAppMessage(function(inAppMessage) {
-  if (inAppMessage instanceof braze.InAppMessage) {
-    const extras = inAppMessage.extras;
-    if (extras) {
-      for (const key in extras) {
-        console.log("key: " + key + ", value: " + extras[key]);
-	    if ( location.pathname === key ) {
-      			braze.showInAppMessage(inAppMessage);  
-    	}else {
-    	 // do nothing
-    	}
-  	} 
-	}
-  }
-});
 
-			
- 
+
+	 
 
   // if you use Content Cards
   braze.subscribeToContentCardsUpdates(function(cards){
