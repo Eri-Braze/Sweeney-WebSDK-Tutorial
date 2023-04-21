@@ -91,13 +91,12 @@
     y.src='https://js.appboycdn.com/web-sdk/4.1/braze.min.js';
     y.async=1;(b=p.getElementsByTagName(P)[0]).parentNode.insertBefore(y,b)
                         
-  // initialize the SDK
-  braze.initialize('3a2b6e6a-ed2c-4df7-8303-277e3d9afd75', 
-		   {allowUserSuppliedJavascript: true},
-		   { 
-			baseUrl: 'sondheim.braze.com',
-			enableLogging: true 
-  		})
+ // initialize the SDK
+  braze.initialize('3a2b6e6a-ed2c-4df7-8303-277e3d9afd75', { 
+	baseUrl: 'sondheim.braze.com',
+  	allowUserSuppliedJavascript: true,
+	enableLogging: true 
+  })
   
   // optionally show all in-app messages without custom handling
   braze.automaticallyShowInAppMessages(); 
